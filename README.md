@@ -8,7 +8,8 @@ Add data attribute to some element:
 
 Add data attribute to modal__container element:
 
-> <div class="modal__container" data-goody-target="anyName">
+**js
+<div class="modal__container" data-goody-target="anyName">
 
 Full example:
 

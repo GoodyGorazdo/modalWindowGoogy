@@ -1,14 +1,14 @@
-Modal window plugin.
+### Modal window plugin.
 
 
-Start
+# Start
 Add data attribute to some element:
 ```html
 
 <button class="open" data-goody-target="anyName">Open Modal</button>
 ```
 
-Add data attribute to modal__container element:
+# Add data attribute to modal__container element:
 
 ```html
 <pre>
@@ -29,7 +29,7 @@ Full example:
 </button>
 ```
 
-#Modal window.
+# Modal window.
 
 ```html
 <div class="modal">
@@ -43,18 +43,21 @@ Full example:
 
 ```
 
-#Animation
-Add data attribute to element (data-goody-path="anyName", data-goody-animation="fadeInUp");
+# Animation
+Add data attribute to element 
+```html
+data-goody-path="anyName" data-goody-animation="fadeInUp"
+```
 
-#Fade In Effects
-  *fadeInUp,
-  *fadeInDown,
-  *fadeInLeft,
-  *fadeInRight,
+# Fade In Effects
+  * fadeInUp,
+  * fadeInDown,
+  * fadeInLeft,
+  * fadeInRight,
 
 
-#Animation Speed In and Out
-#Add data attribute to element
+# Animation Speed In and Out
+# Add data attribute to element
 ```html
 data-goody-path="anyName" 
 data-goody-animation="fadeInUp" 

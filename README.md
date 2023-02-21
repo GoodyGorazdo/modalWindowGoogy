@@ -1,5 +1,4 @@
 # Modal window plugin.
-      Cancel changes
 
 
 ### Start

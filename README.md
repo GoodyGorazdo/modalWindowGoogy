@@ -14,6 +14,10 @@ Add data attribute to modal__container element:
 <pre>
 <div class="modal__container" data-goody-target="anyName">
 </pre>
+```
+
+```html
+
 Full example:
 
 <button class="open"
@@ -25,7 +29,7 @@ Full example:
 </button>
 ```
 
-Modal window.
+#Modal window.
 
 ```html
 <div class="modal">
@@ -39,15 +43,21 @@ Modal window.
 
 ```
 
-Animation
+#Animation
 Add data attribute to element (data-goody-path="anyName", data-goody-animation="fadeInUp");
 
-Fade In Effects
-  fadeInUp,
-  fadeInDown,
-  fadeInLeft,
-  fadeInRight,
+#Fade In Effects
+  *fadeInUp,
+  *fadeInDown,
+  *fadeInLeft,
+  *fadeInRight,
 
-Animation Speed In and Out
-Add data attribute to element
-(data-goody-path="anyName", data-goody-animation="fadeInUp", data-goody-speed-in="300" data-goody-speed-out="300");
+
+#Animation Speed In and Out
+#Add data attribute to element
+```html
+data-goody-path="anyName" 
+data-goody-animation="fadeInUp" 
+data-goody-speed-in="300" 
+data-goody-speed-out="300"
+```

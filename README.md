@@ -2,29 +2,28 @@
 
 
 ### Start
-Add data attribute to some element:
+Add data-modal-path attribute to some button element:
 ```html
 
-<button class="open" data-goody-target="anyName">Open Modal</button>
+<button class="open" data-modal-path="anyName">Open Modal</button>
 ```
 
 ### Add data-target attribute to modal__container element:
 
 ```html
 <pre>
-    <div class="modal__container" data-goody-target="anyName">
+    <div class="modal__container" data-modal-target="anyName">
 </pre>
 ```
 
-```html
-
 ### Full example:
 
+```html
 <button class="open"
-        data-goody-path="example"
-        data-goody-animation="fadeInUp"
-        data-goody-speed-in="300"
-        data-goody-speed-out="300">
+        data-modal-path="example"
+        data-modal-animation="fadeInUp"
+        data-modal-speed-in="300"
+        data-modal-speed-out="300">
  Fade Up
 </button>
 ```
@@ -33,7 +32,7 @@ Add data attribute to some element:
 
 ```html
 <div class="modal">
-  <div class="modal__container" data-goody-target="example">
+  <div class="modal__container" data-modal-target="example">
     <button class="modal__close">Close</button>
     <div class="modal__content">
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis, asperiores?
@@ -44,9 +43,9 @@ Add data attribute to some element:
 ```
 
 ### Animation
-Add data attribute to element 
+Add data attribute to element
 ```html
-data-goody-path="anyName" data-goody-animation="fadeInUp"
+data-modal-path="anyName" data-modal-animation="fadeInUp"
 ```
 
 ### Fade In Effects
@@ -59,8 +58,8 @@ data-goody-path="anyName" data-goody-animation="fadeInUp"
 ### Animation Speed In and Out
 ### Add data attribute to element
 ```html
-data-goody-path="anyName" 
-data-goody-animation="fadeInUp" 
-data-goody-speed-in="300" 
-data-goody-speed-out="300"
+data-modal-path="anyName"
+data-modal-animation="fadeInUp"
+data-modal-speed-in="300"
+data-modal-speed-out="300"
 ```

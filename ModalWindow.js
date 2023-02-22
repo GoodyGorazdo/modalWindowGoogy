@@ -5,7 +5,7 @@ class ModalWindow {
       isClose: () => {},
     }
     this.options = Object.assign(defaultOptions, options);
-    this.modal = document.querySelector('.modal');
+    this.modal = document.querySelector('.modal-window');
     this.fixBlocks = document.querySelectorAll('.fix-block');
     this.speed = false;
     this.animation = false;
@@ -38,12 +38,12 @@ class ModalWindow {
           if (this.modalContainer) this.open();
           return;
         }
-        if (e.target.closest('.modal__close')) {
+        if (e.target.closest('.modal-window__close')) {
           this.close();
           return;
         }
-        if (!e.target.classList.contains('modal__container') &&
-           !e.target.closest('.modal__container') &&
+        if (!e.target.classList.contains('modal-window__container') &&
+           !e.target.closest('.modal-window__container') &&
             this.isOpen
         ) {
           this.close();
@@ -63,27 +63,27 @@ class ModalWindow {
   open(selector) {
     this.previosActiveElement = document.activeElement;
     this.modal.style.setProperty('--transition-time', `${this.speed / 1000}s`);
-    this.modal.classList.add('modal--open');
+    this.modal.classList.add('modal-window--open');
     this.disableScroll();
 
-    this.modalContainer.classList.add('modal--open');
-    this.modalContainer.classList.add(`modal__animation--${this.animation}`);
+    this.modalContainer.classList.add('modal-window--open');
+    this.modalContainer.classList.add(`modal-window__animation--${this.animation}`);
 
     this.isOpen = true;
     this.focusTrap();
 
     setTimeout(() => {
       this.options.isOpen(this);
-      this.modalContainer.classList.add('modal__animate--open');
+      this.modalContainer.classList.add('modal-window__animate--open');
     }, this.speed);
   }
   close() {
     if (this.modalContainer) {
-      this.modalContainer.classList.remove('modal__animate--open');
+      this.modalContainer.classList.remove('modal-window__animate--open');
       setTimeout(() => {
-        this.modalContainer.classList.remove(`modal__animation--${this.animation}`);
-        this.modal.classList.remove('modal--open');
-        this.modalContainer.classList.remove('modal--open');
+        this.modalContainer.classList.remove(`modal-window__animation--${this.animation}`);
+        this.modal.classList.remove('modal-window--open');
+        this.modalContainer.classList.remove('modal-window--open');
         this.enableScroll();
         this.isOpen = false;
         this.focusTrap();

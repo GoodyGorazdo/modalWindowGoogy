@@ -25,16 +25,16 @@ class ModalGoody {
   events() {
     if (this.modal) {
       document.addEventListener('click', function(e) {
-        const clickedElement = e.target.closest('[data-goody-path]');
+        const clickedElement = e.target.closest('[data-modal-path]');
         if (clickedElement) {
-          let target = clickedElement.dataset.goodyPath;
-          let animation = clickedElement.dataset.goodyAnimation;
-          let speed = clickedElement.dataset.goodySpeedIn;
-          let speedOut = clickedElement.dataset.goodySpeedOut;
+          let target = clickedElement.dataset.modalPath;
+          let animation = clickedElement.dataset.modalAnimation;
+          let speed = clickedElement.dataset.modalSpeedIn;
+          let speedOut = clickedElement.dataset.modalSpeedOut;
           this.animation = animation ?? 'fade';
           this.speed = speed ? parseInt(speed) : 300;
           this.speedOut = speedOut ? parseInt(speedOut) : 100;
-          this.modalContainer = document.querySelector(`[data-goody-target="${target}"]`);
+          this.modalContainer = document.querySelector(`[data-modal-target="${target}"]`);
           if (this.modalContainer) this.open();
           return;
         }
@@ -125,17 +125,17 @@ class ModalGoody {
     let pagePosition = window.scrollY;
     this.lockPadding();
     document.body.classList.add('disable-scroll');
-    document.body.dataset.goodyPosition = pagePosition;
+    document.body.dataset.modalPosition = pagePosition;
     document.body.style.top = -pagePosition + 'px';
   }
 
   enableScroll() {
-    let pagePosition = parseInt(document.body.dataset.goodyPosition, 10);
+    let pagePosition = parseInt(document.body.dataset.modalPosition, 10);
     this.unlockPadding();
     document.body.style.top = 'auto';
     document.body.classList.remove('disable-scroll');
     window.scroll({top: pagePosition, left: 0});
-    document.body.removeAttribute('data-goody-position');
+    document.body.removeAttribute('data-modal-position');
   }
 
   lockPadding() {

@@ -134,7 +134,10 @@ class ModalWindow {
     this.unlockPadding();
     document.body.style.top = 'auto';
     document.body.classList.remove('disable-scroll');
-    window.scroll({top: pagePosition, left: 0});
+    window.scrollTo({
+      top: pagePosition,
+      behavior: 'instant'
+    });
     document.body.removeAttribute('data-modal-position');
   }
 

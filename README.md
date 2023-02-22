@@ -63,3 +63,19 @@ data-modal-animation="fadeInUp"
 data-modal-speed-in="300"
 data-modal-speed-out="300"
 ```
+
+
+## Initialization
+
+```js
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = new ModalWindow({
+    isOpen: (modal) => {
+      console.log('opened');
+    },
+    isClose: (modal) => {
+      console.log('closed');
+    },
+  });
+});
+```js

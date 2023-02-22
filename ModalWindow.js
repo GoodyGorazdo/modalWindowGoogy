@@ -1,4 +1,4 @@
-class ModalGoody {
+class ModalWindow {
   constructor(options) {
     let defaultOptions = {
       isOpen: () => {},
@@ -151,7 +151,7 @@ class ModalGoody {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const modal = new ModalGoody({
+  const modal = new ModalWindow({
     isOpen: (modal) => {
       console.log('opened');
     },

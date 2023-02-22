@@ -5,13 +5,12 @@
 
 Add data-modal-path attribute to some button element:
 ```html
-
 <button class="open" data-modal-path="anyName">Open Modal</button>
 ```
 
 Add data-modal-target attribute to modal__container element:
 ```html
-<div class="modal__container" data-modal-target="anyName">
+<div class="modal-window__container" data-modal-target="anyName">
 ```
 
 ### Full example:
@@ -29,15 +28,19 @@ Add data-modal-target attribute to modal__container element:
 ### Modal window.
 
 ```html
-<div class="modal">
-  <div class="modal__container" data-modal-target="example">
-    <button class="modal__close">Close</button>
-    <div class="modal__content">
+<div class="modal-window">
+  <div class="modal-window__container" data-modal-target="example">
+    <button class="modal-window__close">Close</button>
+    <div class="modal-window__content">
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis, asperiores?
     </div>
   </div>
 </div>
+```
 
+if you need one button to work both for opening and closing the window, add the attribute
+```html
+data-modal-one-button="true"
 ```
 
 ### Animation

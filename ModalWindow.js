@@ -27,6 +27,7 @@ class ModalWindow {
       document.addEventListener('click', function(e) {
         const clickedElement = e.target.closest('[data-modal-path]');
         if (clickedElement) {
+          if (clickedElement.dataset.modalOneButton && this.isOpen) return this.close();
           let target = clickedElement.dataset.modalPath;
           let animation = clickedElement.dataset.modalAnimation;
           let speed = clickedElement.dataset.modalSpeedIn;

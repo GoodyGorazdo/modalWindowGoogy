@@ -11,9 +11,7 @@ Add data-modal-path attribute to some button element:
 ### Add data-target attribute to modal__container element:
 
 ```html
-<pre>
-    <div class="modal__container" data-modal-target="anyName">
-</pre>
+<div class="modal__container" data-modal-target="anyName">
 ```
 
 ### Full example:

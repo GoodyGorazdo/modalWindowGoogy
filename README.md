@@ -2,14 +2,14 @@
 
 
 ### Start
+
 Add data-modal-path attribute to some button element:
 ```html
 
 <button class="open" data-modal-path="anyName">Open Modal</button>
 ```
 
-### Add data-target attribute to modal__container element:
-
+Add data-modal-target attribute to modal__container element:
 ```html
 <div class="modal__container" data-modal-target="anyName">
 ```

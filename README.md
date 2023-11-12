@@ -116,6 +116,13 @@ event: 'eventName'
 ## When generating events 
 'Open' will be appended to the event name for opening events and 'Close' for closing events. For instance, if you name the event 'eventName', the generated events will be 'eventNameOpen' when opening the modal window and 'eventNameClose' when closing it.
 
+## When doing so
+you need to attach the listener to the element instance of the class(), for example:
+```js
+const modalWindow = new ModalWindow(options);
+modalWindow.modalEl.addEventListener('eventNameOpen', () => console.log('opened'));
+```
+
 ## Fade In Effects
   * fadeInUp,
   * fadeInDown,

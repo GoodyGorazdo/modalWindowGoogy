@@ -1,9 +1,23 @@
 # Modal window plugin.
 
+## Initialization
 
-### Start
+```js
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = new ModalWindow({
+    isOpen: (modal) => {
+      console.log('opened');
+    },
+    isClose: (modal) => {
+      console.log('closed');
+    },
+  });
+});
+```
 
+## USING WITH HTML DATA ATTRIBUTES
 Add data-modal-path attribute to some button element:
+
 ```html
 <button class="open" data-modal-path="anyName">Open Modal</button>
 ```
@@ -15,6 +29,7 @@ Add data-modal-target attribute to modal__container element:
 
 ### Full example:
 
+Open button:
 ```html
 <button class="open"
         data-modal-path="example"
@@ -25,8 +40,7 @@ Add data-modal-target attribute to modal__container element:
 </button>
 ```
 
-### Modal window.
-
+HTML structure for modal window:
 ```html
 <div class="modal-window">
   <div class="modal-window__container" data-modal-target="example">
@@ -49,15 +63,8 @@ Add data attribute to element
 data-modal-path="anyName" data-modal-animation="fadeInUp"
 ```
 
-### Fade In Effects
-  * fadeInUp,
-  * fadeInDown,
-  * fadeInLeft,
-  * fadeInRight,
-
-
-### Animation Speed In and Out
-### Add data attribute to element
+Animation Speed In and Out
+Add data attribute to element
 ```html
 data-modal-path="anyName"
 data-modal-animation="fadeInUp"
@@ -65,18 +72,33 @@ data-modal-speed-in="300"
 data-modal-speed-out="300"
 ```
 
+##USING FROM JS
 
-## Initialization
-
-```js
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = new ModalWindow({
-    isOpen: (modal) => {
-      console.log('opened');
-    },
-    isClose: (modal) => {
-      console.log('closed');
-    },
-  });
-});
+###Create HTML element for modal window:
+```html
+<div class="modal-window"><div>
 ```
+
+###The modal window is invoked using methods:
+```js
+showMessage(options = {});
+options = {
+   text: 'example'
+   title: 'example',
+   animation: 'anyType',
+   speed: 0.3s,
+   speedOut: 0.3.s,
+   classes: {
+     container: 'example',
+     close: 'example',
+     title: 'example',
+     text: 'example',
+   }
+ }
+```
+
+### Fade In Effects
+  * fadeInUp,
+  * fadeInDown,
+  * fadeInLeft,
+  * fadeInRight,

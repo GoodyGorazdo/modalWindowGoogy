@@ -97,7 +97,26 @@ options = {
  }
 ```
 
-### Fade In Effects
+
+## EVENTS 
+When using HTML attributes, to utilize events, you should add the event name as an attribute to the button that opens the modal window. 
+For example: 
+```html
+data-modal-event="eventName"
+```
+ When using JS, you should add to the options
+ ```js
+options = {
+...
+event: 'eventName'
+...
+}
+```
+
+## NB
+When generating events, 'Open' will be appended to the event name for opening events and 'Close' for closing events. For instance, if you name the event 'eventName', the generated events will be 'eventNameOpen' when opening the modal window and 'eventNameClose' when closing it.
+
+## Fade In Effects
   * fadeInUp,
   * fadeInDown,
   * fadeInLeft,

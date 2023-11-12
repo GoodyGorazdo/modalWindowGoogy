@@ -81,7 +81,7 @@ data-modal-speed-out="300"
 
 ### The modal window is invoked using methods:
 ```js
-showMessage(options = {});
+modal.showMessage(options = {});
 options = {
    text: 'example'
    title: 'example',

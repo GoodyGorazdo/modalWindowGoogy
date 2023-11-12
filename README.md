@@ -126,6 +126,7 @@ event: 'eventName'
 ## When doing so
 you need to attach the listener to the element instance of the class(), for example:
 ```js
+const options = { event: 'eventName' };
 const modalWindow = new ModalWindow(options);
 modalWindow.modalEl.addEventListener('eventNameOpen', () => console.log('opened'));
 ```

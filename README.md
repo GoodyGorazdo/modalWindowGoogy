@@ -72,6 +72,13 @@ data-modal-speed-in="300"
 data-modal-speed-out="300"
 ```
 
+### Fade In Effects
+  * fadeInUp,
+  * fadeInDown,
+  * fadeInLeft,
+  * fadeInRight,
+
+    
 ## USING FROM JS
 
 ### Create HTML element for modal window:
@@ -122,9 +129,3 @@ you need to attach the listener to the element instance of the class(), for exam
 const modalWindow = new ModalWindow(options);
 modalWindow.modalEl.addEventListener('eventNameOpen', () => console.log('opened'));
 ```
-
-## Fade In Effects
-  * fadeInUp,
-  * fadeInDown,
-  * fadeInLeft,
-  * fadeInRight,

@@ -72,14 +72,14 @@ data-modal-speed-in="300"
 data-modal-speed-out="300"
 ```
 
-##USING FROM JS
+## USING FROM JS
 
-###Create HTML element for modal window:
+### Create HTML element for modal window:
 ```html
 <div class="modal-window"><div>
 ```
 
-###The modal window is invoked using methods:
+### The modal window is invoked using methods:
 ```js
 showMessage(options = {});
 options = {

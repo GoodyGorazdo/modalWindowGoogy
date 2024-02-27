@@ -30,6 +30,7 @@
  * Open button:
  *  <button class="open"
  *         data-modal-path="example"
+ *         data-modal-event="example"
  *         data-modal-animation="fadeInUp"
  *         data-modal-speed-in="300"
  *         data-modal-speed-out="300">
@@ -97,8 +98,8 @@
  * You should add to the options event: 'eventName'.
  *
  * NB
- * When generating events, 'Open' will be appended to
- * the event name for opening events and 'Close' for closing events.
+ * When generating events, ':open' will be appended to
+ * the event name for opening events and ':close' for closing events.
  * For instance, if you name the event 'eventName',
  * the generated events will be 'eventNameOpen'
  * when opening the modal window and 'eventNameClose' when closing it.
@@ -107,12 +108,13 @@
  * to the element instance of the class, for example:
  *
  * const modalWindow = new ModalWindow(options);
- * modalWindow.addEventListener('eventNameOpen', () => console.log('opened'));
+ * modalWindow.addEventListener('eventName:open', () => console.log('opened'));
+ * modalWindow.addEventListener('eventName:close', () => console.log('closed'));
  *
  *
  */
 
-export default class ModalWindow {
+class ModalWindow {
   constructor(options) {
     this.focusElements = [
       "a[href]",
@@ -122,11 +124,6 @@ export default class ModalWindow {
       "textarea",
       "[tabindex]",
     ];
-
-    this.modalElEvents = {
-      open: 'modalWindowOpen',
-      close: 'modalWindowClose',
-    }
 
     this.attributes = {
       path: 'data-modal-path',
@@ -155,7 +152,9 @@ export default class ModalWindow {
     };
 
     this.options = Object.assign(defaultOptions, options);
-    this.modalEl = document.getElementById(this.classes.modal);
+    this.modalEl = document.getElementById(this.ids.modal);
+    console.log(this.classes.modal);
+    console.log(this.modalEl);
     this.alert = document.querySelector(`.${this.classes.message}`);
     this.fixBlocks = document.querySelectorAll(`.${this.classes.fixBlock}`);
 
@@ -258,8 +257,9 @@ export default class ModalWindow {
   }
 
   open(e = null) {
+    console.log(this.generateEvent);
     if (this.generateEvent) {
-      const openEvent = new CustomEvent(this.generateEvent + 'Open', { detail: { instance: this } });
+      const openEvent = new CustomEvent(this.generateEvent + ':open', { detail: { instance: this } });
       this.modalEl.dispatchEvent(openEvent);
     }
     this.previosActiveElement = document.activeElement;
@@ -293,7 +293,7 @@ export default class ModalWindow {
       this.options.isClose(this, e);
       this.isTmpCreated && this.removeTmpElement();
       if (this.generateEvent) {
-        const closeEvent = new CustomEvent(this.generateEvent + 'Close', { detail: { instance: this } });
+        const closeEvent = new CustomEvent(this.generateEvent + ':close', { detail: { instance: this } });
         this.modalEl.dispatchEvent(closeEvent);
         this.generateEvent = false;
       }

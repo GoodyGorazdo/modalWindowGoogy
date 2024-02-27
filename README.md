@@ -33,6 +33,7 @@ Open button:
 ```html
 <button class="open"
         data-modal-path="example"
+        data-modal-event="eventName"
         data-modal-animation="fadeInUp"
         data-modal-speed-in="300"
         data-modal-speed-out="300">
@@ -78,7 +79,7 @@ data-modal-speed-out="300"
   * fadeInLeft,
   * fadeInRight,
 
-    
+
 ## USING FROM JS
 
 ### Create HTML element for modal window:
@@ -105,9 +106,9 @@ options = {
 ```
 
 
-## EVENTS 
-When using HTML attributes, to utilize events, you should add the event name as an attribute to the button that opens the modal window. 
-For example: 
+## EVENTS
+When using HTML attributes, to utilize events, you should add the event name as an attribute to the button that opens the modal window.
+For example:
 ```html
 data-modal-event="eventName"
 ```
@@ -120,14 +121,14 @@ event: 'eventName'
 }
 ```
 
-## When generating events 
+## When generating events
 'Open' will be appended to the event name for opening events and 'Close' for closing events. For instance, if you name the event 'eventName', the generated events will be 'eventNameOpen' when opening the modal window and 'eventNameClose' when closing it.
 
 ## When doing so
 you need to attach the listener to the element instance of the class(), for example:
 ```js
 const modalWindow = new ModalWindow(options);
-modalWindow.modalEl.addEventListener('eventNameForMessageOpen', () => console.log('opened'));
-modalWindow.modalEl.addEventListener('eventNameForMessaageClose', () => console.log('closed'));
+modalWindow.modalEl.addEventListener('eventName:open', () => console.log('opened'));
+modalWindow.modalEl.addEventListener('eventName:close', () => console.log('closed'));
 modalWindow.showMessage({text: 'example', event: 'eventNameForMessage'});
 ```

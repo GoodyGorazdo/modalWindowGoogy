@@ -130,5 +130,5 @@ you need to attach the listener to the element instance of the class(), for exam
 const modalWindow = new ModalWindow(options);
 modalWindow.modalEl.addEventListener('eventName:open', () => console.log('opened'));
 modalWindow.modalEl.addEventListener('eventName:close', () => console.log('closed'));
-modalWindow.showMessage({text: 'example', event: 'eventNameForMessage'});
+modalWindow.showMessage({text: 'example', event: 'eventName'});
 ```

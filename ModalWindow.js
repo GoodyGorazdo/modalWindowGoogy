@@ -101,8 +101,8 @@
  * When generating events, ':open' will be appended to
  * the event name for opening events and ':close' for closing events.
  * For instance, if you name the event 'eventName',
- * the generated events will be 'eventNameOpen'
- * when opening the modal window and 'eventNameClose' when closing it.
+ * the generated events will be 'eventName:open'
+ * when opening the modal window and 'eventName:close' when closing it.
  *
  * When doing so, you need to attach the listener
  * to the element instance of the class, for example:

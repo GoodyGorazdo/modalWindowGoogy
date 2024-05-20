@@ -153,8 +153,6 @@ class ModalWindow {
 
     this.options = Object.assign(defaultOptions, options);
     this.modalEl = document.getElementById(this.ids.modal);
-    console.log(this.classes.modal);
-    console.log(this.modalEl);
     this.alert = document.querySelector(`.${this.classes.message}`);
     this.fixBlocks = document.querySelectorAll(`.${this.classes.fixBlock}`);
 
@@ -257,7 +255,6 @@ class ModalWindow {
   }
 
   open(e = null) {
-    console.log(this.generateEvent);
     if (this.generateEvent) {
       const openEvent = new CustomEvent(this.generateEvent + ':open', { detail: { instance: this } });
       this.modalEl.dispatchEvent(openEvent);
